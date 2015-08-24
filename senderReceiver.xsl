@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-Modified 201580812 by Wee Hiong
-1. Hide the recipient's name and address (removed the entire left-hand side).
-2. Reformat sender's address to hide address line 2 (blank) and redundant country.
-3. Reformat sender's address to combine city and postal code into 1 line.
+    Modified 20150812 by Wee Hiong
+    1. Hide the recipient's name and address (removed the entire left-hand side).
+    2. Hide address line 2 (blank) and redundant country in the sender's address.
+    3. Combine city and postal code into one line in the sender's address.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template name="senderReceiver">

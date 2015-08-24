@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Modified on 20150824 by Wee Hiong
+    1. Removed description column.
+    2. Added call number column.
+-->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
     <xsl:include href="senderReceiver.xsl" />
@@ -57,7 +62,7 @@
                                                     <xsl:value-of select="title" />
                                                 </td>
                                                 <td>
-                                                    <xsl:value-of select="call_number"></xsl:value-of>
+                                                    <xsl:value-of select="call_number" />
                                                 </td>
                                                 <td>
                                                     <xsl:value-of select="author" />
