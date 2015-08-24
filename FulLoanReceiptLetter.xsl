@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Modified on 20150824 by Wee Hiong
+    Modified on 20150810 by Wee Hiong
     1. Removed description column.
     2. Added call number column.
 -->
