@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Modified 20150824 by Wee Hiong
+    Modified on 20150824 by Wee Hiong
     1. Replace all references to orders with the term titles, and stop the order number from displaying.
     2. Add line to inform user about delay of information in Primo.
 -->
