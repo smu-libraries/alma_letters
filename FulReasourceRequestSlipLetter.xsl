@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20150825 by Wee Hiong
+    1. Fix incorrect request creation date.
+    2. Display 3 dates:
+        - Request Made
+        - Notification Sent
+        - Expires On
+
     Modified on 20150824 by Wee Hiong
     1. Reorder the elements on the hold slip:
         - Requester
@@ -59,17 +66,24 @@
                                     <xsl:value-of select="notification_data/request/manual_description" /></td>
                                 </tr>
                             </xsl:if>
+                            <xsl:if test="notification_data/request/create_date != ''">
+                                <tr>
+                                    <td>
+                                    <b>Request Made:</b>&#160;
+                                    <xsl:value-of select="notification_data/request/create_date" /></td>
+                                </tr>
+                            </xsl:if>
                             <xsl:if test="notification_data/request/work_flow_entity/create_date != ''">
                                 <tr>
                                     <td>
-                                    <b>Request Created:</b>&#160;
+                                    <b>Notification Sent:</b>&#160;
                                     <xsl:value-of select="notification_data/request/work_flow_entity/create_date" /></td>
                                 </tr>
                             </xsl:if>
                             <xsl:if test="notification_data/request/work_flow_entity/expiration_date != ''">
                                 <tr>
                                     <td>
-                                        <b>Expiration:&#160;
+                                        <b>Expires On:&#160;
                                         <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date" /></b>
                                     </td>
                                 </tr>
