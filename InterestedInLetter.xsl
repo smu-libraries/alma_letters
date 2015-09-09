@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20150909 by Wee Hiong
+    1. Omit call number if not available.
+    2. Print location if available.
+
     Modified on 20150824 by Wee Hiong
     1. Replace all references to orders with the term titles, and stop the order number from displaying.
     2. Add line to inform user about delay of information in Primo.
@@ -39,16 +43,30 @@
                         <br />
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                    <br />@@callNumber@@:
-                    <br /></td>
-                    <td>
-                        <br />
-                        <xsl:value-of select="notification_data/poline_inventory/call_number" />
-                        <br />
-                    </td>
-                </tr>
+                <xsl:if test="notification_data/poline_inventory/call_number != ''">
+                    <tr>
+                        <td>
+                        <br />@@callNumber@@:
+                        <br /></td>
+                        <td>
+                            <br />
+                            <xsl:value-of select="notification_data/poline_inventory/call_number" />
+                            <br />
+                        </td>
+                    </tr>
+                </xsl:if>
+                <xsl:if test="notification_data/poline_inventory/location/location_name_for_display != ''">
+                    <tr>
+                        <td>
+                        <br />Location:
+                        <br /></td>
+                        <td>
+                            <br />
+                            <xsl:value-of select="notification_data/poline_inventory/location/location_name_for_display" />
+                            <br />
+                        </td>
+                    </tr>
+                </xsl:if>
                 <tr>
                     <td>
                     <br />@@message@@:
