@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+	Modified on 20150908 by Salihin
+	1. Added SMU15 programme promotion at end of message
+
     Modified on 20150810 by Wee Hiong
     1. Removed description column.
     2. Added call number column.
@@ -82,6 +85,11 @@
                                 </td>
                             </tr>
                             <br />
+							<tr>
+                                <td>
+                                    <h>Check out our Celebrating SMU15 @ Library programmes – <a><xsl:attribute name="href">http://smu.sg/15atlib</xsl:attribute>http://smu.sg/15atlib</a></h>
+                                </td>
+                            </tr>
                             <br />
                         </table>
                     </div>
