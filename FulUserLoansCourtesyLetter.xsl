@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Modified on 20150910 by Wee Hiong
+    1. Remove signature and footer.
+    2. Replace description column with call number.
+-->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
     <xsl:include href="senderReceiver.xsl" />
@@ -47,7 +52,7 @@
                                     </xsl:attribute>
                                     <tr>
                                         <th>@@title@@</th>
-                                        <th>@@description@@</th>
+                                        <th>@@call_number@@</th>
                                         <th>@@author@@</th>
                                         <th>@@due_date@@</th>
                                         <th>@@library@@</th>
@@ -58,7 +63,7 @@
                                                 <xsl:value-of select="title" />
                                             </td>
                                             <td>
-                                                <xsl:value-of select="description" />
+                                                <xsl:value-of select="call_number" />
                                             </td>
                                             <td>
                                                 <xsl:value-of select="author" />
@@ -78,18 +83,8 @@
                     <br />
                     <br />@@additional_info_1@@ 
                     <br />@@additional_info_2@@ 
-                    <br />
-                    <table>
-                        <tr>
-                            <td>@@sincerely@@</td>
-                        </tr>
-                        <tr>
-                            <td>@@department@@</td>
-                        </tr>
-                    </table></div>
+                    <br /></div>
                 </div>
-                <!-- footer.xsl -->
-                <xsl:call-template name="lastFooter" />
             </body>
         </html>
     </xsl:template>
