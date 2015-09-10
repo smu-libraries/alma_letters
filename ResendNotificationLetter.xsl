@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Modified on 20150910 by Wee Hiong
+    1. Remove signature and footer.
+-->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
     <xsl:include href="senderReceiver.xsl" />
@@ -35,25 +39,15 @@
                         </table>
                         <br />
                         <br />
-                        <table>
-                            <tr>
-                                <td>@@sincerely@@</td>
-                            </tr>
-                            <tr>
-                                <td>@@from@@</td>
-                            </tr>
-                        </table>
                         <br />
                     </div>
                 </div>
-                <!-- footer.xsl -->
-                <xsl:call-template name="lastFooter" />
                 <br />
                 <table>
                     <xsl:if test="notification_data/file_name !=''">
                         <tr>
                             <td>
-                                <b>@@file_name@@:</b>
+                                <b>@@file_name@@:</b>&#160;
                                 <xsl:value-of select="notification_data/file_name" />
                             </td>
                         </tr>
