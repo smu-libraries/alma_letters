@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20151001 by Wee Hiong
+    1. Display PO Number / PO Line Number.
+
     Modified on 20150826 by Wee Hiong
     1. Remove footer.
     2. Reformat shipping/billing addresses.
@@ -90,7 +93,7 @@
                     </xsl:attribute>
                     <tr>
                         <th></th>
-                        <th>@@po_line_number@@</th>
+                        <th>PO Number / @@po_line_number@@</th>
                         <th>@@issn_isbn@@</th>
                         <th>@@title@@</th>
                         <th>Fund</th>
@@ -104,6 +107,7 @@
                                 <xsl:value-of select="position()" />
                             </td>
                             <td>
+                                <xsl:value-of select="ancestor::po/number" /> /
                                 <xsl:value-of select="line_reference" />
                             </td>
                             <td>
