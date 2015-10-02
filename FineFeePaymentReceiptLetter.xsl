@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+	Modified on 20151002 by Wee Hiong
+	1. Add the name of the item that caused the fine.
+-->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:include href="header.xsl" />
 	<xsl:include href="senderReceiver.xsl" />
@@ -43,6 +47,7 @@
 					</xsl:attribute>
 					<tr>
 						<th>@@fee_type@@</th>
+						<th>Item</th>
 						<th>@@payment_date@@</th>
 						<th align="right">@@paid_amount@@</th>
 						<th>@@payment_method@@</th>
@@ -52,6 +57,9 @@
 						<tr>
 							<td>
 								<xsl:value-of select="fine_fee_type_display" />
+							</td>
+							<td>
+								<xsl:value-of select="item_title" />
 							</td>
 							<td>
 								<xsl:value-of select="create_date" />
