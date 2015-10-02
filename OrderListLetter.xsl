@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20151002 by Wee Hiong
+    1. Fix formatting.
+
     Modified on 20151001 by Wee Hiong
     1. Display PO Number / PO Line Number.
 
@@ -107,9 +110,8 @@
                                 <xsl:value-of select="position()" />
                             </td>
                             <td>
-                                <xsl:value-of select="ancestor::po/number" /> /
-                                <xsl:value-of select="line_reference" />
-                            </td>
+                            <xsl:value-of select="ancestor::po/number" />&#160;/
+                            <xsl:value-of select="line_reference" /></td>
                             <td>
                             <xsl:value-of select="identifier_type" />&#160;
                             <xsl:value-of select="identifier" /></td>
