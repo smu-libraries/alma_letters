@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20151008 by Wee Hiong
+    1. Ask vendor to include both PO and PO Line Numbers on the invoice.
+    2. Ask vendor to send correspondence to libacq.
+
     Modified on 20151002 by Wee Hiong
     1. Fix formatting.
 
@@ -134,6 +138,12 @@
                     </xsl:for-each>
                 </table>
                 <br />
+                <table cellspacing="0" cellpadding="5" border="0">
+                    <tr>
+                        <td>Please include both the PO Number and the PO Line Number on your invoice. Kindly direct any questions regarding this order to
+                        <a href="mailto:libacq@smu.edu.sg">libacq@smu.edu.sg</a>. Thank you.</td>
+                    </tr>
+                </table>
             </body>
         </html>
     </xsl:template>
