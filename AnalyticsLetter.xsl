@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20151113 by Wee Hiong
+    1. Use the letterText variable instead of hardcoded text.
+
     Modified on 20150827 by Wee Hiong
     1. Removed footer.
     2. Put report name after introduction statement.
@@ -31,7 +34,7 @@
                     <div class="messageBody">
                         <table cellspacing="0" cellpadding="5" border="0">
                             <tr>
-                                <td>Attached please find the report to which you are subscribed:
+                                <td>@@letterText@@
                                 <br />
                                 <b>
                                     <xsl:value-of select="/notification_data/report_name" />
