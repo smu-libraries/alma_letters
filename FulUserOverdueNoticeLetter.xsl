@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Modified on 20151116 by Wee Hiong
+    1. Add call number and library columns (to match that of the courtesy letter).
+    2. Insert message to ask user to return items as soon as possible.
+-->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
     <xsl:include href="senderReceiver.xsl" />
@@ -47,8 +52,10 @@
                                     </xsl:attribute>
                                     <tr>
                                         <th>@@title@@</th>
+                                        <th>@@call_number@@</th>
                                         <th>@@author@@</th>
                                         <th>@@due_date@@</th>
+                                        <th>@@library@@</th>
                                     </tr>
                                     <xsl:for-each select="notification_data/item_loans/item_loan">
                                         <tr>
@@ -56,14 +63,28 @@
                                                 <xsl:value-of select="title" />
                                             </td>
                                             <td>
+                                                <xsl:value-of select="call_number" />
+                                            </td>
+                                            <td>
                                                 <xsl:value-of select="author" />
                                             </td>
                                             <td>
                                                 <xsl:value-of select="due_date" />
                                             </td>
+                                            <td>
+                                                <xsl:value-of select="library_name" />
+                                            </td>
                                         </tr>
                                     </xsl:for-each>
                                 </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Please return these items to the library as soon as possible. Thank you.</b>
                             </td>
                         </tr>
                     </table>
