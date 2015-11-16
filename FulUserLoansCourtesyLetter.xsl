@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20151116 by Wee Hiong
+    1. Add message to ask user to renew or return items as soon as possible.
+
     Modified on 20150910 by Wee Hiong
     1. Remove signature and footer.
     2. Replace description column with call number.
@@ -81,8 +84,16 @@
                         </tr>
                     </table>
                     <br />
-                    <br />@@additional_info_1@@ 
-                    <br />@@additional_info_2@@ 
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Please renew these loans by logging into your library account, or return them to the library as soon as possible. Thank you.</b>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <br />@@additional_info_1@@
+                    <br />@@additional_info_2@@
                     <br /></div>
                 </div>
             </body>
