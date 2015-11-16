@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-        Modified on 20151002 by Wee Hiong
-        1. Fix wrong column for total amount.
-        2. Add currency to total amount.
+    Modified on 20151002 by Wee Hiong
+    1. Fix wrong column for total amount.
+    2. Add currency to total amount.
 
-        Modified on 20151002 by Wee Hiong
-        1. Add the name of the item that caused the fine.
+    Modified on 20151002 by Wee Hiong
+    1. Add the name of the item that caused the fine.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
