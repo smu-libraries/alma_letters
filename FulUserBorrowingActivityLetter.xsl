@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Modified on 20151116 by Wee Hiong
+    1. Remove footer.
+-->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
     <xsl:include href="senderReceiver.xsl" />
@@ -152,20 +156,8 @@
                             </xsl:if>
                         </table>
                         <br />
-                        <table>
-                            <tr>
-                                <td>@@sincerely@@</td>
-                            </tr>
-                            <tr>
-                                <td>@@department@@</td>
-                            </tr>
-                        </table>
                     </div>
                 </div>
-                <!-- footer.xsl -->
-                <xsl:call-template name="lastFooter" />
-                <xsl:call-template name="myAccount" />
-                <xsl:call-template name="contactUs" />
             </body>
         </html>
     </xsl:template>
