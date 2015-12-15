@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20151215 by Wee Hiong
+    1. Removed SMU15 promotion message.
+
     Modified on 20150908 by Salihin
     1. Added SMU15 programme promotion at end of message.
 
@@ -83,11 +86,6 @@
                                         </xsl:for-each>
                                     </table>
                                 </td>
-                            </tr>
-                            <br />
-                            <tr>
-                                <td>Check out our Celebrating SMU15 @ Library programmes -
-                                <a href="http://smu.sg/15atlib">http://smu.sg/15atlib</a></td>
                             </tr>
                             <br />
                         </table>
