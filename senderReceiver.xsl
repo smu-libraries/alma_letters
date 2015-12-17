@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20151217 by Wee Hiong
+    1. Exclude the library name but print all three address lines in the contact information.
+
     Modified on 20150812 by Wee Hiong
     1. Hide the recipient's name and address (removed the entire left-hand side).
     2. Hide address line 2 (blank) and redundant country in the sender's address.
@@ -19,31 +22,39 @@
                             </xsl:attribute>
                             <tr>
                                 <td>
-                                    <xsl:value-of select="name" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
                                     <xsl:value-of select="address/line1" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                <xsl:value-of select="address/city" />&#160;
-                                <xsl:value-of select="address/postal_code" /></td>
+                                    <xsl:value-of select="address/line2" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <xsl:value-of select="address/line3" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <xsl:value-of select="address/city" />
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="address/postal_code" />
+                                </td>
                             </tr>
                             <tr />
                             <tr>
-                                <td>Tel:
-                                <xsl:value-of select="phone/phone" /></td>
+                                <td>Tel: <xsl:value-of select="phone/phone" /></td>
                             </tr>
                             <tr>
                                 <td>Email:
-                                <a>
-                                    <xsl:attribute name="href">mailto:
-                                    <xsl:value-of select="email/email" /></xsl:attribute>
-                                    <xsl:value-of select="email/email" />
-                                </a></td>
+                                    <a>
+                                        <xsl:attribute name="href">mailto:
+                                            <xsl:value-of select="email/email" />
+                                        </xsl:attribute>
+                                        <xsl:value-of select="email/email" />
+                                    </a>
+                                </td>
                             </tr>
                         </table>
                     </xsl:for-each>
