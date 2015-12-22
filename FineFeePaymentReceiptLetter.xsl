@@ -32,7 +32,8 @@
                 <xsl:call-template name="toWhomIsConcerned" />
                 <xsl:if test="notification_data/transaction_id != ''">
                     <h4>@@transaction_id@@:
-                    <xsl:value-of select="/notification_data/transaction_id" /></h4>
+                        <xsl:value-of select="/notification_data/transaction_id" />
+                    </h4>
                 </xsl:if>
                 <xsl:for-each select="notification_data/labels_list">
                     <table cellspacing="0" cellpadding="5" border="0">
@@ -45,8 +46,8 @@
                     <br />
                 </xsl:for-each>
                 <table cellpadding="5" class="listing">
-                    <!-- style.xsl -->
                     <xsl:attribute name="style">
+                        <!-- style.xsl -->
                         <xsl:call-template name="mainTableStyleCss" />
                     </xsl:attribute>
                     <tr>
@@ -69,8 +70,10 @@
                                 <xsl:value-of select="create_date" />
                             </td>
                             <td align="right">
-                            <xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_ammount/currency" />&#160;
-                            <xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_amount_display" /></td>
+                                <xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_ammount/currency" />
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_amount_display" />
+                            </td>
                             <td>
                                 <xsl:value-of select="fines_fee_transactions/fines_fee_transaction/transaction_method" />
                             </td>
@@ -80,16 +83,18 @@
                         </tr>
                     </xsl:for-each>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td />
+                        <td />
                         <td align="right">
                             <b>@@total@@:</b>
                         </td>
                         <td align="right">
-                        <xsl:value-of select="notification_data/currency" />&#160;
-                        <xsl:value-of select="notification_data/total_amount_paid" /></td>
-                        <td></td>
-                        <td></td>
+                            <xsl:value-of select="notification_data/currency" />
+                            <xsl:text> </xsl:text>
+                            <xsl:value-of select="notification_data/total_amount_paid" />
+                        </td>
+                        <td />
+                        <td />
                     </tr>
                 </table>
                 <br />
