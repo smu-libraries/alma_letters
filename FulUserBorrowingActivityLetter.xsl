@@ -143,7 +143,8 @@
                                 <tr>
                                     <td>
                                         <b>@@total@@
-                                        <xsl:value-of select="notification_data/total_fee" /></b>
+                                            <xsl:value-of select="notification_data/total_fee" />
+                                        </b>
                                     </td>
                                 </tr>
                                 <tr>
