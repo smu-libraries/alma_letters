@@ -50,44 +50,54 @@
                     <table width="100%">
                         <tr>
                             <td width="50%">
-                            <b>@@order_date@@:</b>&#160;
-                            <xsl:value-of select="/notification_data/po/create_date" /></td>
+                                <b>@@order_date@@:</b>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="/notification_data/po/create_date" />
+                            </td>
                             <td width="50%">
-                            <b>@@vendor_account@@:</b>&#160;
-                            <xsl:value-of select="/notification_data/po/vendor_account/description" /></td>
+                                <b>@@vendor_account@@:</b>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="/notification_data/po/vendor_account/description" />
+                            </td>
                         </tr>
                         <tr />
                         <tr>
                             <td width="50%">
-                            <b>@@shipping_address@@:</b>
-                            <br />
-                            <xsl:value-of select="/notification_data/po/ship_to_address/line1" />
-                            <br />
-                            <xsl:value-of select="/notification_data/po/ship_to_address/line2" />
-                            <br />
-                            <xsl:value-of select="/notification_data/po/ship_to_address/line3" />
-                            <br />
-                            <xsl:value-of select="/notification_data/po/ship_to_address/city" />&#160;
-                            <xsl:value-of select="/notification_data/po/ship_to_address/postal_code" /></td>
+                                <b>@@shipping_address@@:</b>
+                                <br />
+                                <xsl:value-of select="/notification_data/po/ship_to_address/line1" />
+                                <br />
+                                <xsl:value-of select="/notification_data/po/ship_to_address/line2" />
+                                <br />
+                                <xsl:value-of select="/notification_data/po/ship_to_address/line3" />
+                                <br />
+                                <xsl:value-of select="/notification_data/po/ship_to_address/city" />
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="/notification_data/po/ship_to_address/postal_code" />
+                            </td>
                             <td width="50%">
-                            <b>@@billing_address@@:</b>
-                            <br />
-                            <xsl:value-of select="/notification_data/po/bill_to_address/line1" />
-                            <br />
-                            <xsl:value-of select="/notification_data/po/bill_to_address/line2" />
-                            <br />
-                            <xsl:value-of select="/notification_data/po/bill_to_address/line3" />
-                            <br />
-                            <xsl:value-of select="/notification_data/po/bill_to_address/city" />&#160;
-                            <xsl:value-of select="/notification_data/po/ship_to_address/postal_code" /></td>
+                                <b>@@billing_address@@:</b>
+                                <br />
+                                <xsl:value-of select="/notification_data/po/bill_to_address/line1" />
+                                <br />
+                                <xsl:value-of select="/notification_data/po/bill_to_address/line2" />
+                                <br />
+                                <xsl:value-of select="/notification_data/po/bill_to_address/line3" />
+                                <br />
+                                <xsl:value-of select="/notification_data/po/bill_to_address/city" />
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="/notification_data/po/ship_to_address/postal_code" />
+                            </td>
                         </tr>
                         <xsl:if test="/notification_data/po/shipping_method != ''">
                             <tr />
                             <tr>
                                 <td>
-                                <b>@@shipping_method@@:</b>&#160;
-                                <xsl:value-of select="/notification_data/po/shipping_method" /></td>
-                                <td></td>
+                                    <b>@@shipping_method@@:</b>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="/notification_data/po/shipping_method" />
+                                </td>
+                                <td />
                             </tr>
                         </xsl:if>
                     </table>
@@ -99,7 +109,7 @@
                         <xsl:call-template name="mainTableStyleCss" />
                     </xsl:attribute>
                     <tr>
-                        <th></th>
+                        <th />
                         <th>PO Number / @@po_line_number@@</th>
                         <th>@@issn_isbn@@</th>
                         <th>@@title@@</th>
@@ -114,11 +124,15 @@
                                 <xsl:value-of select="position()" />
                             </td>
                             <td>
-                            <xsl:value-of select="ancestor::po/number" />&#160;/
-                            <xsl:value-of select="line_reference" /></td>
+                                <xsl:value-of select="ancestor::po/number" />
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="line_reference" />
+                            </td>
                             <td>
-                            <xsl:value-of select="identifier_type" />&#160;
-                            <xsl:value-of select="identifier" /></td>
+                                <xsl:value-of select="identifier_type" />
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="identifier" />
+                            </td>
                             <td>
                                 <xsl:value-of select="meta_data_values/title" />
                             </td>
@@ -129,8 +143,10 @@
                                 <xsl:value-of select="total_quantity" />
                             </td>
                             <td align="right">
-                            <xsl:value-of select="total_price_compose/currency" />&#160;
-                            <xsl:value-of select="total_price_compose/sum" /></td>
+                                <xsl:value-of select="total_price_compose/currency" />
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="total_price_compose/sum" />
+                            </td>
                             <td>
                                 <xsl:value-of select="vendor_note" />
                             </td>
@@ -140,8 +156,11 @@
                 <br />
                 <table cellspacing="0" cellpadding="5" border="0">
                     <tr>
-                        <td>Please include both the PO Number and the PO Line Number on your invoice. Kindly direct any questions regarding this order to
-                        <a href="mailto:libacq@smu.edu.sg">libacq@smu.edu.sg</a>. Thank you.</td>
+                        <td>
+                            Please include both the PO Number and the PO Line Number on your invoice.
+                            Kindly direct any questions regarding this order to <a href="mailto:libacq@smu.edu.sg">libacq@smu.edu.sg</a>.
+                            Thank you.
+                        </td>
                     </tr>
                 </table>
             </body>
