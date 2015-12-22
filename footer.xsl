@@ -18,18 +18,18 @@
                         <xsl:call-template name="listStyleCss" />
                     </xsl:attribute>
                     <td align="center">
-						<xsl:value-of select="name" />
+                        <xsl:value-of select="name" />
                         <xsl:text> </xsl:text>
-						<xsl:value-of select="line1" />
+                        <xsl:value-of select="line1" />
                         <xsl:text> </xsl:text>
-						<xsl:value-of select="line2" />
+                        <xsl:value-of select="line2" />
                         <xsl:text> </xsl:text>
-						<xsl:value-of select="city" />
+                        <xsl:value-of select="city" />
                         <xsl:text> </xsl:text>
-						<xsl:value-of select="postal_code" />
+                        <xsl:value-of select="postal_code" />
                         <xsl:text> </xsl:text>
-						<xsl:value-of select="country" />
-					</td>
+                        <xsl:value-of select="country" />
+                    </td>
                 </xsl:for-each>
             </tr>
         </table>
@@ -39,9 +39,9 @@
             <tr>
                 <td align="left">
                     <a>
-                    	<xsl:attribute name="href">@@email_contact_us@@</xsl:attribute>
-						@@contact_us@@
-					</a>
+                        <xsl:attribute name="href">@@email_contact_us@@</xsl:attribute>
+                        @@contact_us@@
+                    </a>
                 </td>
             </tr>
         </table>
@@ -51,9 +51,9 @@
             <tr>
                 <td>
                     <a>
-                    	<xsl:attribute name="href">@@email_my_account@@</xsl:attribute>
-						@@my_account@@
-					</a>
+                        <xsl:attribute name="href">@@email_my_account@@</xsl:attribute>
+                        @@my_account@@
+                    </a>
                 </td>
             </tr>
         </table>
