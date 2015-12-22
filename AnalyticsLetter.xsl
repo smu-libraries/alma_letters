@@ -34,11 +34,11 @@
                     <div class="messageBody">
                         <table cellspacing="0" cellpadding="5" border="0">
                             <tr>
-                                <td>@@letterText@@
-                                <br />
-                                <b>
-                                    <xsl:value-of select="/notification_data/report_name" />
-                                </b></td>
+                                <td>
+                                    @@letterText@@
+                                    <br />
+                                    <b><xsl:value-of select="/notification_data/report_name" /></b>
+                                </td>
                             </tr>
                         </table>
                     </div>
