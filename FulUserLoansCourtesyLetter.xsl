@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20151222 by Wee Hiong.
+    1. Remove sender's address as contact information is now inside the header.
+
     Modified on 20151116 by Wee Hiong
     1. Add message to ask user to renew or return items as soon as possible.
 
@@ -9,7 +12,6 @@
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
-    <xsl:include href="senderReceiver.xsl" />
     <xsl:include href="mailReason.xsl" />
     <xsl:include href="footer.xsl" />
     <xsl:include href="style.xsl" />
@@ -26,8 +28,6 @@
                 </xsl:attribute>
                 <!-- header.xsl -->
                 <xsl:call-template name="head" />
-                <!-- SenderReceiver.xsl -->
-                <xsl:call-template name="senderReceiver" />
                 <br />
                 <!-- mailReason.xsl -->
                 <xsl:call-template name="toWhomIsConcerned" />
