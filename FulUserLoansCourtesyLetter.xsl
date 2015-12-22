@@ -33,68 +33,69 @@
                 <xsl:call-template name="toWhomIsConcerned" />
                 <div class="messageArea">
                     <div class="messageBody">
-                    <table cellspacing="0" cellpadding="5" border="0">
-                        <tr>
-                            <td>
-                                <b>@@message@@</b>
-                                <br />
-                                <br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>@@loans@@</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <table cellpadding="5" class="listing">
-                                    <xsl:attribute name="style">
-                                        <!-- style.xsl -->
-                                        <xsl:call-template name="mainTableStyleCss" />
-                                    </xsl:attribute>
-                                    <tr>
-                                        <th>@@title@@</th>
-                                        <th>@@call_number@@</th>
-                                        <th>@@author@@</th>
-                                        <th>@@due_date@@</th>
-                                        <th>@@library@@</th>
-                                    </tr>
-                                    <xsl:for-each select="notification_data/item_loans/item_loan">
+                        <table cellspacing="0" cellpadding="5" border="0">
+                            <tr>
+                                <td>
+                                    <b>@@message@@</b>
+                                    <br />
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>@@loans@@</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellpadding="5" class="listing">
+                                        <xsl:attribute name="style">
+                                            <!-- style.xsl -->
+                                            <xsl:call-template name="mainTableStyleCss" />
+                                        </xsl:attribute>
                                         <tr>
-                                            <td>
-                                                <xsl:value-of select="title" />
-                                            </td>
-                                            <td>
-                                                <xsl:value-of select="call_number" />
-                                            </td>
-                                            <td>
-                                                <xsl:value-of select="author" />
-                                            </td>
-                                            <td>
-                                                <xsl:value-of select="due_date" />
-                                            </td>
-                                            <td>
-                                                <xsl:value-of select="library_name" />
-                                            </td>
+                                            <th>@@title@@</th>
+                                            <th>@@call_number@@</th>
+                                            <th>@@author@@</th>
+                                            <th>@@due_date@@</th>
+                                            <th>@@library@@</th>
                                         </tr>
-                                    </xsl:for-each>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
-                    <table>
-                        <tr>
-                            <td>
-                                <b>Please renew these loans by logging into your library account, or return them to the library as soon as possible. Thank you.</b>
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
-                    <br />@@additional_info_1@@
-                    <br />@@additional_info_2@@
-                    <br /></div>
+                                        <xsl:for-each select="notification_data/item_loans/item_loan">
+                                            <tr>
+                                                <td>
+                                                    <xsl:value-of select="title" />
+                                                </td>
+                                                <td>
+                                                    <xsl:value-of select="call_number" />
+                                                </td>
+                                                <td>
+                                                    <xsl:value-of select="author" />
+                                                </td>
+                                                <td>
+                                                    <xsl:value-of select="due_date" />
+                                                </td>
+                                                <td>
+                                                    <xsl:value-of select="library_name" />
+                                                </td>
+                                            </tr>
+                                        </xsl:for-each>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table>
+                            <tr>
+                                <td>
+                                    <b>Please renew these loans by logging into your library account, or return them to the library as soon as possible. Thank you.</b>
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <br />@@additional_info_1@@
+                        <br />@@additional_info_2@@
+                        <br />
+                    </div>
                 </div>
             </body>
         </html>
