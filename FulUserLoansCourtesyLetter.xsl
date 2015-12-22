@@ -3,6 +3,7 @@
     Modified on 20151222 by Wee Hiong.
     1. Remove sender's address as contact information is now inside the header.
     2. Add link to library account.
+    3. Make the intro message take the header font.
 
     Modified on 20151116 by Wee Hiong
     1. Add message to ask user to renew or return items as soon as possible.
@@ -36,14 +37,7 @@
                         <table cellspacing="0" cellpadding="5" border="0">
                             <tr>
                                 <td>
-                                    <b>@@message@@</b>
-                                    <br />
-                                    <br />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>@@loans@@</b>
+                                    <h>@@message@@</h>
                                 </td>
                             </tr>
                             <tr>
@@ -87,7 +81,8 @@
                         <table>
                             <tr>
                                 <td>
-                                    <b>Please renew these loans by logging into your library account, or return them to the library as soon as possible. Thank you.</b>
+                                    Please renew these loans by logging into your library account, or return them to the library as soon as possible.
+                                    Thank you.
                                 </td>
                             </tr>
                         </table>
