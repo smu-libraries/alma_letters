@@ -2,6 +2,7 @@
 <!--
     Modified on 20151222 by Wee Hiong.
     1. Remove sender's address as contact information is now inside the header.
+    2. Add link to library account.
 
     Modified on 20151116 by Wee Hiong
     1. Add message to ask user to renew or return items as soon as possible.
@@ -92,9 +93,8 @@
                             </tr>
                         </table>
                         <br />
-                        <br />@@additional_info_1@@
-                        <br />@@additional_info_2@@
-                        <br />
+                        <!-- footer.xsl -->
+                        <xsl:call-template name="myAccount" />
                     </div>
                 </div>
             </body>

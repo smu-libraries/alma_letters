@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20151222 by Wee Hiong
+    1. Add link to library account.
+
     Modified on 20150910 by Wee Hiong
     1. Remove signature and footer.
 -->
@@ -54,6 +57,9 @@
                         </tr>
                     </xsl:if>
                 </table>
+                <br />
+                <!-- footer.xsl -->
+                <xsl:call-template name="myAccount" />
             </body>
         </html>
     </xsl:template>

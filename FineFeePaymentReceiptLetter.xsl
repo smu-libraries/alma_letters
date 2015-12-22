@@ -2,6 +2,7 @@
 <!--
     Modified on 20151222 by Wee Hiong.
     1. Remove sender's address as contact information is now inside the header.
+    2. Add link to library account.
 
     Modified on 20151002 by Wee Hiong
     1. Fix wrong column for total amount.
@@ -98,6 +99,8 @@
                     </tr>
                 </table>
                 <br />
+                <!-- footer.xsl -->
+                <xsl:call-template name="myAccount" />
             </body>
         </html>
     </xsl:template>

@@ -2,6 +2,7 @@
 <!--
     Modified on 20151222 by Wee Hiong.
     1. Remove sender's address as contact information is now inside the header.
+    2. Add link to library account.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
@@ -126,12 +127,10 @@
                             </tr>
                         </xsl:for-each>
                     </table>
-                    <br />
-                    <br />@@additional_info_1@@
-                    <br />@@additional_info_2@@
-                    <br />
                 </table>
                 <br />
+                <!-- footer.xsl -->
+                <xsl:call-template name="myAccount" />
             </body>
         </html>
     </xsl:template>

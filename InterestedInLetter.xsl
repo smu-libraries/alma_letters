@@ -2,6 +2,7 @@
 <!--
     Modified on 20151222 by Wee Hiong.
     1. Remove sender's address as contact information is now inside the header.
+    2. Add link to library account.
 
     Modified on 20150909 by Wee Hiong
     1. Omit call number if not available.
@@ -84,6 +85,9 @@
                 </table>
                 <br />
                 Please note that new additions to the library may take up to 24 hours before appearing in the library catalogue.
+                <br />
+                <!-- footer.xsl -->
+                <xsl:call-template name="myAccount" />
             </body>
         </html>
     </xsl:template>

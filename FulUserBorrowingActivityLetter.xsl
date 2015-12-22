@@ -2,6 +2,7 @@
 <!--
     Modified on 20151222 by Wee Hiong.
     1. Remove sender's address as contact information is now inside the header.
+    2. Add link to library account.
 
     Modified on 20151116 by Wee Hiong
     1. Remove footer.
@@ -157,6 +158,8 @@
                             </xsl:if>
                         </table>
                         <br />
+                        <!-- footer.xsl -->
+                        <xsl:call-template name="myAccount" />
                     </div>
                 </div>
             </body>
