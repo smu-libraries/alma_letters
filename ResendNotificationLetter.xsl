@@ -47,7 +47,8 @@
                     <xsl:if test="notification_data/file_name !=''">
                         <tr>
                             <td>
-                                <b>@@file_name@@:</b>&#160;
+                                <b>@@file_name@@:</b>
+                                <xsl:text> </xsl:text>
                                 <xsl:value-of select="notification_data/file_name" />
                             </td>
                         </tr>
