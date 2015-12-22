@@ -22,67 +22,69 @@
                 <xsl:call-template name="generalStyle" />
             </head>
             <body>
-            <xsl:attribute name="style">
-                <!-- style.xsl -->
-                <xsl:call-template name="bodyStyleCss" />
-            </xsl:attribute>
-            <!-- header.xsl -->
-            <xsl:call-template name="head" />
-            <br />
-            <!-- mailReason.xsl -->
-            <xsl:call-template name="toWhomIsConcerned" />@@You_were_specify@@:
-            <br />
-            <table cellspacing="0" cellpadding="5" border="0">
-                <tr>
-                    <td>
-                        <br />@@title@@:
-                        <br />
-                    </td>
-                    <td>
-                        <br />
-                        <xsl:value-of select="notification_data/title" />
-                        <br />
-                    </td>
-                </tr>
-                <xsl:if test="notification_data/poline_inventory/call_number != ''">
+                <xsl:attribute name="style">
+                    <!-- style.xsl -->
+                    <xsl:call-template name="bodyStyleCss" />
+                </xsl:attribute>
+                <!-- header.xsl -->
+                <xsl:call-template name="head" />
+                <br />
+                <!-- mailReason.xsl -->
+                <xsl:call-template name="toWhomIsConcerned" />@@You_were_specify@@:
+                <br />
+                <table cellspacing="0" cellpadding="5" border="0">
                     <tr>
                         <td>
-                            <br />@@callNumber@@:
+                            <br />@@title@@:
                             <br />
                         </td>
                         <td>
                             <br />
-                            <xsl:value-of select="notification_data/poline_inventory/call_number" />
+                            <xsl:value-of select="notification_data/title" />
                             <br />
                         </td>
                     </tr>
-                </xsl:if>
-                <xsl:if test="notification_data/poline_inventory/location/location_name_for_display != ''">
+                    <xsl:if test="notification_data/poline_inventory/call_number != ''">
+                        <tr>
+                            <td>
+                                <br />@@callNumber@@:
+                                <br />
+                            </td>
+                            <td>
+                                <br />
+                                <xsl:value-of select="notification_data/poline_inventory/call_number" />
+                                <br />
+                            </td>
+                        </tr>
+                    </xsl:if>
+                    <xsl:if test="notification_data/poline_inventory/location/location_name_for_display != ''">
+                        <tr>
+                            <td>
+                                <br />Location:
+                                <br />
+                            </td>
+                            <td>
+                                <br />
+                                <xsl:value-of select="notification_data/poline_inventory/location/location_name_for_display" />
+                                <br />
+                            </td>
+                        </tr>
+                    </xsl:if>
                     <tr>
                         <td>
-                            <br />Location:
+                            <br />@@message@@:
                             <br />
                         </td>
                         <td>
                             <br />
-                            <xsl:value-of select="notification_data/poline_inventory/location/location_name_for_display" />
+                            <xsl:value-of select="notification_data/message" />
                             <br />
                         </td>
                     </tr>
-                </xsl:if>
-                <tr>
-                    <td>
-                        <br />@@message@@:
-                        <br />
-                    </td>
-                    <td>
-                        <br />
-                        <xsl:value-of select="notification_data/message" />
-                        <br />
-                    </td>
-                </tr>
-            </table>
-            <br />Please note that new additions to the library may take up to 24 hours before appearing in the library catalogue.</body>
+                </table>
+                <br />
+                Please note that new additions to the library may take up to 24 hours before appearing in the library catalogue.
+            </body>
         </html>
     </xsl:template>
 </xsl:stylesheet>
