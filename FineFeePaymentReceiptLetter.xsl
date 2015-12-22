@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Modified on 20151222 by Wee Hiong.
+    Modified on 20151222 by Wee Hiong
     1. Remove sender's address as contact information is now inside the header.
     2. Add link to library account.
     3. Add intro message before Transaction ID.

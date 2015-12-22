@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Modified on 20151222 by Wee Hiong.
+    Modified on 20151222 by Wee Hiong
     1. Remove call to empty salutations template.
 
     Modified on 20151113 by Wee Hiong

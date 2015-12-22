@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Modified on 20151218 by Wee Hiong.
+    Modified on 20151218 by Wee Hiong
     1. Align the library account link to the center.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">

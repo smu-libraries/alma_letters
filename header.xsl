@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Modified on 20151222 by Wee Hiong.
+    Modified on 20151222 by Wee Hiong
     1. Add contact information into the header on the right side of the logo.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">

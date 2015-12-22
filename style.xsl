@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Modified on 20151222 by Wee Hiong.
+    Modified on 20151222 by Wee Hiong
     1. Insert style for contact information in the header.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
