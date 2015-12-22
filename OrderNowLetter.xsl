@@ -50,7 +50,7 @@
                                     <br />
                                     <br />
                                     <b>@@pol_reference@@:</b>
-                                    <xsl:text> <xsl:text>
+                                    <xsl:text> </xsl:text>
                                     <xsl:value-of select="notification_data/line_reference" />
                                     <br />
                                     <b>@@order_number@@:</b>
