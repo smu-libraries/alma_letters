@@ -16,7 +16,7 @@
                     <!-- style.xsl -->
                     <xsl:call-template name="headerLogoStyleCss" />
                 </xsl:attribute>
-                <td width="50%">
+                <td width="70%">
                     <div id="mailHeader">
                         <div id="logoContainer" class="alignLeft">
                             <img src="cid:logo.jpg" alt="logo" />
