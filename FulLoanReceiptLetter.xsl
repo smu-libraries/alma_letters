@@ -3,6 +3,7 @@
     Modified on 20151222 by Wee Hiong.
     1. Remove sender's address as contact information is now inside the header.
     2. Add link to library account.
+    3. Remove loans header.
 
     Modified on 20151215 by Wee Hiong
     1. Removed SMU15 promotion message.
@@ -40,11 +41,6 @@
                             <tr>
                                 <td>
                                     <h>@@inform_loaned_items@@</h>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>@@loans@@</b>
                                 </td>
                             </tr>
                             <tr>
