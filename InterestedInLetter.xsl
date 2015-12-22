@@ -35,8 +35,9 @@
             <table cellspacing="0" cellpadding="5" border="0">
                 <tr>
                     <td>
-                    <br />@@title@@:
-                    <br /></td>
+                        <br />@@title@@:
+                        <br />
+                    </td>
                     <td>
                         <br />
                         <xsl:value-of select="notification_data/title" />
@@ -46,8 +47,9 @@
                 <xsl:if test="notification_data/poline_inventory/call_number != ''">
                     <tr>
                         <td>
-                        <br />@@callNumber@@:
-                        <br /></td>
+                            <br />@@callNumber@@:
+                            <br />
+                        </td>
                         <td>
                             <br />
                             <xsl:value-of select="notification_data/poline_inventory/call_number" />
@@ -58,8 +60,9 @@
                 <xsl:if test="notification_data/poline_inventory/location/location_name_for_display != ''">
                     <tr>
                         <td>
-                        <br />Location:
-                        <br /></td>
+                            <br />Location:
+                            <br />
+                        </td>
                         <td>
                             <br />
                             <xsl:value-of select="notification_data/poline_inventory/location/location_name_for_display" />
@@ -69,8 +72,9 @@
                 </xsl:if>
                 <tr>
                     <td>
-                    <br />@@message@@:
-                    <br /></td>
+                        <br />@@message@@:
+                        <br />
+                    </td>
                     <td>
                         <br />
                         <xsl:value-of select="notification_data/message" />
