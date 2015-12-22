@@ -10,7 +10,6 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
     <xsl:include href="mailReason.xsl" />
-    <xsl:include href="footer.xsl" />
     <xsl:include href="style.xsl" />
     <xsl:variable name="conta1">0</xsl:variable>
     <xsl:variable name="stepType" select="/notification_data/request/work_flow_entity/step_type" />
