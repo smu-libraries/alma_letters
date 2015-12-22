@@ -35,38 +35,44 @@
                         <table cellspacing="0" cellpadding="5" border="0">
                             <tr>
                                 <td>
-                                <xsl:choose>
-                                    <xsl:when test="/notification_data/order_now_succed='true'">
-                                        <br />
-                                        <b>@@order_now_succed@@.</b>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <br />
-                                        <b>@@order_now_failed@@ 
-                                        <xsl:value-of select="notification_data/need_review_entity" />.</b>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                                <br />
-                                <br />
-                                <b>@@pol_reference@@:</b>&#160; 
-                                <xsl:value-of select="notification_data/line_reference" />
-                                <br />
-                                <b>@@order_number@@:</b>&#160; 
-                                <xsl:value-of select="notification_data/number" /></td>
+                                    <xsl:choose>
+                                        <xsl:when test="/notification_data/order_now_succed='true'">
+                                            <br />
+                                            <b>@@order_now_succed@@.</b>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <br />
+                                            <b>@@order_now_failed@@
+                                                <xsl:value-of select="notification_data/need_review_entity" />.
+                                            </b>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                    <br />
+                                    <br />
+                                    <b>@@pol_reference@@:</b>
+                                    <xsl:text> <xsl:text>
+                                    <xsl:value-of select="notification_data/line_reference" />
+                                    <br />
+                                    <b>@@order_number@@:</b>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="notification_data/number" />
+                                </td>
                             </tr>
                             <tr>
                                 <td>
-                                <br />
-                                <br />
-                                <b>@@vendor_note@@:</b>&#160; 
-                                <xsl:value-of select="notification_data/vendor_note" />
-                                <xsl:choose>
-                                    <xsl:when test="/notification_data/rush='true'">
-                                        <br />
-                                        <b>@@rush@@.</b>
-                                    </xsl:when>
-                                    <xsl:otherwise></xsl:otherwise>
-                                </xsl:choose></td>
+                                    <br />
+                                    <br />
+                                    <b>@@vendor_note@@:</b>
+                                    <xsl:text> </xsl:text>
+                                    <xsl:value-of select="notification_data/vendor_note" />
+                                    <xsl:choose>
+                                        <xsl:when test="/notification_data/rush='true'">
+                                            <br />
+                                            <b>@@rush@@.</b>
+                                        </xsl:when>
+                                        <xsl:otherwise />
+                                    </xsl:choose>
+                                </td>
                             </tr>
                         </table>
                     </div>
