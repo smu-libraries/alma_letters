@@ -3,6 +3,7 @@
     Modified on 20151222 by Wee Hiong.
     1. Remove sender's address as contact information is now inside the header.
     2. Add link to library account.
+    3. Remove unnecessary bolds.
 
     Modified on 20151116 by Wee Hiong
     1. Remove footer.
@@ -33,9 +34,7 @@
                             <xsl:if test="notification_data/item_loans/item_loan or notification_data/overdue_item_loans/item_loan">
                                 <tr>
                                     <td>
-                                        <b>@@reminder_message@@</b>
-                                        <br />
-                                        <br />
+                                        <h>@@reminder_message@@</h>
                                     </td>
                                 </tr>
                                 <xsl:if test="notification_data/overdue_item_loans/item_loan">
@@ -130,7 +129,7 @@
                             <xsl:if test="notification_data/organization_fee_list/string">
                                 <tr>
                                     <td>
-                                        <b>@@debt_message@@</b>
+                                        <h>@@debt_message@@</h>
                                     </td>
                                 </tr>
                                 <xsl:for-each select="notification_data/organization_fee_list/string">
@@ -149,9 +148,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <b>@@please_pay_message@@</b>
-                                        <br />
-                                        <br />
+                                        <h>@@please_pay_message@@</h>
                                     </td>
                                 </tr>
                             </xsl:if>
