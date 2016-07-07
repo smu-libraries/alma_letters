@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20160707 by Wee Hiong
+    1. Add do-not-reply message to the footer.
+
     Modified on 20151222 by Wee Hiong
     1. Remove sender's address as contact information is now inside the header.
     2. Add link to library account.
@@ -116,6 +119,7 @@
                         <br />
                         <!-- footer.xsl -->
                         <xsl:call-template name="myAccount" />
+                        <xsl:call-template name="doNotReply" />
                     </div>
                 </div>
             </body>

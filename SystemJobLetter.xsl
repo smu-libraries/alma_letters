@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20160707 by Wee Hiong
+    1. Add do-not-reply message to the footer.
+
     Modified on 20151222 by Wee Hiong
     1. Remove footer.
     2. Remove sender's address.
@@ -7,6 +10,7 @@
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
+    <xsl:include href="footer.xsl" />
     <xsl:include href="mailReason.xsl" />
     <xsl:include href="style.xsl" />
     <xsl:template match="/">
@@ -506,6 +510,8 @@
                     </tr>
                 </table>
                 <br />
+                <!-- footer.xsl -->
+                <xsl:call-template name="doNotReply" />
             </body>
         </html>
     </xsl:template>
