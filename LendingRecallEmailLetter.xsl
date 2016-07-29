@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Modified on 20160729 by Wee Hiong
+    1. Add signature (library's address) with patron-facing footer.
+    2. Remove unused includes.
+-->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
-    <xsl:include href="senderReceiver.xsl" />
-    <xsl:include href="mailReason.xsl" />
     <xsl:include href="footer.xsl" />
     <xsl:include href="style.xsl" />
-    <xsl:include href="recordTitle.xsl" />
     <xsl:template match="/">
         <html>
             <head>
@@ -46,13 +48,13 @@
                                 <th>@@due_date@@</th>
                             </tr>
                             <tr>
-                                <td><xsl:value-of select="notification_data/request/display/title"/></td>
-                                <td><xsl:value-of select="notification_data/request/display/author"/></td>
-                                <td><xsl:value-of select="notification_data/original_due_date"/></td>
-                                <td><xsl:value-of select="notification_data/request/due_date"/></td>
+                                <td><xsl:value-of select="notification_data/request/display/title" /></td>
+                                <td><xsl:value-of select="notification_data/request/display/author" /></td>
+                                <td><xsl:value-of select="notification_data/original_due_date" /></td>
+                                <td><xsl:value-of select="notification_data/request/due_date" /></td>
                             </tr>
                         </table>
-                        <br/>
+                        <br />
                         <table>
                             <tr>
                                 <b>
@@ -63,70 +65,12 @@
                                 </b>
                             </tr>
                         </table>
-                        <br/>
-                        <table>
-                            <tr>
-                                <td>@@signature@@</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <xsl:value-of select="notification_data/library/name" />
-                                </td>
-                            </tr>
-                            <xsl:if test="notification_data/library/address/line1 !=''">
-                                <tr>
-                                    <td>
-                                        <xsl:value-of select="notification_data/library/address/line1" />
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                            <xsl:if test="notification_data/library/address/line2 !=''">
-                                <tr>
-                                    <td>
-                                        <xsl:value-of select="notification_data/library/address/line2" />
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                            <xsl:if test="notification_data/library/address/line3 !=''">
-                                <tr>
-                                    <td>
-                                        <xsl:value-of select="notification_data/library/address/line3" />
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                            <xsl:if test="notification_data/library/address/line4 !=''">
-                                <tr>
-                                    <td>
-                                        <xsl:value-of select="notification_data/library/address/line4" />
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                            <xsl:if test="notification_data/library/address/line5 !=''">
-                                <tr>
-                                    <td>
-                                        <xsl:value-of select="notification_data/library/address/line5" />
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                            <xsl:if test="notification_data/library/address/city !=''">
-                                <tr>
-                                    <td>
-                                        <xsl:value-of select="notification_data/library/address/city" />
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                            <xsl:if test="notification_data/library/address/country !=''">
-                                <tr>
-                                    <td>
-                                        <xsl:value-of select="notification_data/library/address/country" />
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                        </table>
+                        <br />
+                        <!-- footer.xsl -->
+                        <xsl:call-template name="myAccount" />
+                        <xsl:call-template name="doNotReply" />
                     </div>
                 </div>
-                <!-- footer.xsl -->
-                <xsl:call-template name="lastFooter" />
             </body>
         </html>
     </xsl:template>
