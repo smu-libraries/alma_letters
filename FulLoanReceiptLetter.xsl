@@ -92,7 +92,7 @@
                             </tr>
                             <xsl:if test="//item_loan/due_date_shortened_reason[text()]='RECALL'">
                                 <tr>
-                                    <td>* Loan due is shortened due to reservation by another user.</td>
+                                    <td>* Loan period is shortened due to reservation by another user.</td>
                                 </tr>
                             </xsl:if>
                         </table>
