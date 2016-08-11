@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20160811 by Wee Hiong
+    1. Inform user about shortened due date if item is under reservation.
+
     Modified on 20160707 by Wee Hiong
     1. Add do-not-reply message to the footer.
 
@@ -74,6 +77,7 @@
                                                 </td>
                                                 <td>
                                                     <xsl:value-of select="loan_date" />
+                                                    <xsl:if test="due_date_shortened_reason='RECALL'">*</xsl:if>
                                                 </td>
                                                 <td>
                                                     <xsl:value-of select="new_due_date_str" />
@@ -86,6 +90,11 @@
                                     </table>
                                 </td>
                             </tr>
+                            <xsl:if test="//item_loan/due_date_shortened_reason[text()]='RECALL'">
+                                <tr>
+                                    <td>* Loan due is shortened due to reservation by another user.</td>
+                                </tr>
+                            </xsl:if>
                         </table>
                         <br />
                         <!-- footer.xsl -->
