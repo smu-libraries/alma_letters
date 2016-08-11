@@ -5,7 +5,8 @@
     2. Remove bolding from the message text.
     3. Remove additional header ("Loans") from the list of loans.
     4. Replace the description column with the call number.
-    5. Change signature to patron-facing footer.
+    5. Remove the old due date column.
+    6. Change signature to patron-facing footer.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
@@ -66,7 +67,6 @@
                                             <th>@@title@@</th>
                                             <th>Call Number</th>
                                             <th>@@author@@</th>
-                                            <th>@@old_due_date@@</th>
                                             <th>@@new_due_date@@</th>
                                             <th>@@library@@</th>
                                         </tr>
@@ -80,9 +80,6 @@
                                                 </td>
                                                 <td>
                                                     <xsl:value-of select="author"/>
-                                                </td>
-                                                <td>
-                                                    <xsl:value-of select="old_due_date_str"/>
                                                 </td>
                                                 <td>
                                                     <xsl:value-of select="new_due_date_str"/>
