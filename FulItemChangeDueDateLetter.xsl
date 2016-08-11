@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Modified on 20160811 by Wee Hiong
+    1. Remove library address from the body.
+    2. Remove bolding from the message text.
+    3. Remove additional header ("Loans") from the list of loans.
+    4. Replace the description column with the call number.
+    5. Change signature to patron-facing footer.
+-->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
     <xsl:include href="senderReceiver.xsl" />
@@ -17,8 +25,6 @@
                 </xsl:attribute>
                 <!-- header.xsl -->
                 <xsl:call-template name="head" />
-                <!-- SenderReceiver.xsl -->
-                <xsl:call-template name="senderReceiver" />
                 <br />
                 <!-- mailReason.xsl -->
                 <xsl:call-template name="toWhomIsConcerned" />
@@ -28,30 +34,25 @@
                             <tr>
                                 <td>
                                     <xsl:if test="notification_data/message='RECALL_DUEDATE_CHANGE'">
-                                        <b>@@recall_and_date_change@@</b>
+                                        @@recall_and_date_change@@
                                     </xsl:if>
                                     <xsl:if test="notification_data/message='RECALL_ONLY'">
-                                        <b>@@recall_and_no_date_change@@</b>
+                                        @@recall_and_no_date_change@@
                                     </xsl:if>
                                     <xsl:if test="notification_data/message='DUE_DATE_CHANGE_ONLY'">
-                                        <b>@@message@@</b>
+                                        @@message@@
                                     </xsl:if>
                                     <xsl:if test="notification_data/message='RECALL_CANCEL_RESTORE_ORIGINAL_DUEDATE'">
-                                        <b>@@cancel_recall_date_change@@</b>
+                                        @@cancel_recall_date_change@@
                                     </xsl:if>
                                     <xsl:if test="notification_data/message='RECALL_CANCEL_ITEM_RENEWED'">
-                                        <b>@@cancel_recall_renew@@</b>
+                                        @@cancel_recall_renew@@
                                     </xsl:if>
                                     <xsl:if test="notification_data/message='RECALL_CANCEL_NO_CHANGE'">
-                                        <b>@@cancel_recall_no_date_change@@</b>
+                                        @@cancel_recall_no_date_change@@
                                     </xsl:if>
                                     <br />
                                     <br />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>@@loans@@</b>
                                 </td>
                             </tr>
                             <tr>
@@ -63,7 +64,7 @@
                                         </xsl:attribute>
                                         <tr>
                                             <th>@@title@@</th>
-                                            <th>@@description@@</th>
+                                            <th>Call Number</th>
                                             <th>@@author@@</th>
                                             <th>@@old_due_date@@</th>
                                             <th>@@new_due_date@@</th>
@@ -75,7 +76,7 @@
                                                     <xsl:value-of select="title"/>
                                                 </td>
                                                 <td>
-                                                    <xsl:value-of select="description"/>
+                                                    <xsl:value-of select="call_number"/>
                                                 </td>
                                                 <td>
                                                     <xsl:value-of select="author"/>
@@ -96,19 +97,11 @@
                             </tr>
                         </table>
                         <br />
-                        <table>
-                            <tr>
-                                <td>@@sincerely@@</td>
-                            </tr>
-                            <tr>
-                                <td>@@department@@</td>
-                            </tr>
-                        </table>
+                        <!-- footer.xsl -->
+                        <xsl:call-template name="myAccount" />
+                        <xsl:call-template name="doNotReply" />
                     </div>
                 </div>
-                <!-- footer.xsl -->
-                <xsl:call-template name="lastFooter" />
-                <xsl:call-template name="contactUs" />
             </body>
         </html>
     </xsl:template>
