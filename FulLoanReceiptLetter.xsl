@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     Modified on 20160811 by Wee Hiong
+    1. Insert libchanges2016 message (about change to 3-hour loans).
+
+    Modified on 20160811 by Wee Hiong
     1. Inform user about shortened due date if item is under reservation.
 
     Modified on 20160707 by Wee Hiong
@@ -98,6 +101,7 @@
                         </table>
                         <br />
                         <!-- footer.xsl -->
+                        <xsl:call-template name="libchanges2016" />
                         <xsl:call-template name="myAccount" />
                         <xsl:call-template name="doNotReply" />
                     </div>
