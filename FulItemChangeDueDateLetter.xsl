@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20161031 by Wee Hiong
+    1. Remove unused reference to senderReceiver.xsl.
+
     Modified on 20160811 by Wee Hiong
     1. Remove library address from the body.
     2. Remove bolding from the message text.
@@ -10,7 +13,6 @@
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:include href="header.xsl" />
-    <xsl:include href="senderReceiver.xsl" />
     <xsl:include href="mailReason.xsl" />
     <xsl:include href="footer.xsl" />
     <xsl:include href="style.xsl" />
