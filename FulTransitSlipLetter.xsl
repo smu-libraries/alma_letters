@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0"
-xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:include href="header.xsl" />
   <xsl:include href="senderReceiver.xsl" />
   <xsl:include href="mailReason.xsl" />
@@ -14,19 +13,19 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       </head>
       <body>
         <xsl:attribute name="style">
-          <xsl:call-template name="bodyStyleCss" />
           <!-- style.xsl -->
+          <xsl:call-template name="bodyStyleCss" />
         </xsl:attribute>
-        <xsl:call-template name="head" />
         <!-- header.xsl -->
+        <xsl:call-template name="head" />
         <div class="messageArea">
           <div class="messageBody">
             <table cellspacing="0" cellpadding="5" border="0">
               <tr>
-                <td><b>@@print_date@@: </b>
-                <xsl:value-of select="notification_data/request/create_date" />-
-
-                <xsl:value-of select="notification_data/request/create_time" /></td>
+                <td>
+                  <b>@@print_date@@: </b>
+                  <xsl:value-of select="notification_data/request/create_date" />-<xsl:value-of select="notification_data/request/create_time" />
+                </td>
               </tr>
               <tr>
                 <td>
@@ -46,27 +45,37 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 <td>@@we_are_transferring_item_below@@</td>
               </tr>
               <tr>
-                <td><b>@@from@@: </b>
-                <xsl:value-of select="notification_data/request/assigned_unit_name" /></td>
+                <td>
+                  <b>@@from@@: </b>
+                  <xsl:value-of select="notification_data/request/assigned_unit_name" />
+                </td>
               </tr>
               <tr>
-                <td><b>@@to@@: </b>
-                <xsl:value-of select="notification_data/request/calculated_destination_name" /></td>
+                <td>
+                  <b>@@to@@: </b>
+                  <xsl:value-of select="notification_data/request/calculated_destination_name" />
+                </td>
               </tr>
               <tr>
-                <td><b>@@transfer_date@@: </b>
-                <xsl:value-of select="notification_data/request/create_date" /></td>
+                <td>
+                  <b>@@transfer_date@@: </b>
+                  <xsl:value-of select="notification_data/request/create_date" />
+                </td>
               </tr>
               <tr>
-                <td><b>@@transfer_time@@: </b>
-                <xsl:value-of select="notification_data/request/create_time" /></td>
+                <td>
+                  <b>@@transfer_time@@: </b>
+                  <xsl:value-of select="notification_data/request/create_time" />
+                </td>
               </tr>
-			  <xsl:if test="notification_data/request/material_type_display">
-				  <tr>
-					<td><b>@@material_type@@: </b>
-					<xsl:value-of select="notification_data/request/material_type_display" /></td>
-				  </tr>
-			  </xsl:if>
+              <xsl:if test="notification_data/request/material_type_display">
+                <tr>
+                  <td>
+                    <b>@@material_type@@: </b>
+                    <xsl:value-of select="notification_data/request/material_type_display" />
+                  </td>
+                </tr>
+              </xsl:if>
               <xsl:if test="notification_data/user_for_printing/note">
                 <tr>
                   <td>
@@ -92,17 +101,17 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 </tr>
               </xsl:if>
               <xsl:if test="notification_data/request/note">
-				<tr>
-					<td>
-						<b>@@request_note@@:</b>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<xsl:value-of select="notification_data/request/note" />
-					</td>
-				</tr>
-			  </xsl:if>
+                <tr>
+                  <td>
+                    <b>@@request_note@@:</b>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <xsl:value-of select="notification_data/request/note" />
+                  </td>
+                </tr>
+              </xsl:if>
               <xsl:if test="notification_data/user_for_printing/name">
                 <tr>
                   <td>
@@ -116,42 +125,54 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 </tr>
                 <xsl:if test="notification_data/user_for_printing/email">
                   <tr>
-                    <td><b>@@email@@: </b>
-                    <xsl:value-of select="notification_data/user_for_printing/email" /></td>
+                    <td>
+                      <b>@@email@@: </b>
+                      <xsl:value-of select="notification_data/user_for_printing/email" />
+                    </td>
                   </tr>
                 </xsl:if>
                 <xsl:if test="notification_data/user_for_printing/phone">
                   <tr>
-                    <td><b>@@tel@@: </b>
-                    <xsl:value-of select="notification_data/user_for_printing/phone" /></td>
+                    <td>
+                      <b>@@tel@@: </b>
+                      <xsl:value-of select="notification_data/user_for_printing/phone" />
+                    </td>
                   </tr>
                 </xsl:if>
                 <tr>
-                  <td><b>@@request_date@@: </b>
-                  <xsl:value-of select="notification_data/request/create_date" /></td>
+                  <td>
+                    <b>@@request_date@@: </b>
+                    <xsl:value-of select="notification_data/request/create_date" />
+                  </td>
                 </tr>
                 <xsl:if test="notification_data/request/lastInterestDate">
                   <tr>
-                    <td><b>@@expiration_date@@: </b>
-                    <xsl:value-of select="notification_data/request/lastInterestDate" /></td>
+                    <td>
+                      <b>@@expiration_date@@: </b>
+                      <xsl:value-of select="notification_data/request/lastInterestDate" />
+                    </td>
                   </tr>
                 </xsl:if>
               </xsl:if>
-			  <tr>
-				<td><xsl:call-template name="recordTitle" /></td>
-			  </tr>
-			  <xsl:if test="notification_data/phys_item_display/owning_library_name">
-                  <tr>
-                    <td><b>@@owning_library@@: </b>
-                    <xsl:value-of select="notification_data/phys_item_display/owning_library_name" /></td>
-                  </tr>
-                </xsl:if>
+              <tr>
+                <td>
+                  <!-- recordTitle.xsl -->
+                  <xsl:call-template name="recordTitle" />
+                </td>
+              </tr>
+              <xsl:if test="notification_data/phys_item_display/owning_library_name">
+                <tr>
+                  <td>
+                    <b>@@owning_library@@: </b>
+                    <xsl:value-of select="notification_data/phys_item_display/owning_library_name" />
+                  </td>
+                </tr>
+              </xsl:if>
             </table>
           </div>
         </div>
-        <!-- recordTitle.xsl -->
-        <xsl:call-template name="lastFooter" />
         <!-- footer.xsl -->
+        <xsl:call-template name="lastFooter" />
       </body>
     </html>
   </xsl:template>
