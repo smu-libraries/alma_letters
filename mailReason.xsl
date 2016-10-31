@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20161031 by Wee Hiong
+    1. Remove superfluous for-each loop.
+
     Modified on 20150808 by Wee Hiong
     1. Replaced patron name with a generic Sir/Mdm.
 -->
@@ -8,9 +11,7 @@
         <table cellspacing="0" cellpadding="5" border="0">
             <tr>
                 <td>
-                    <xsl:for-each select="notification_data">
-                        <h3>@@dear@@</h3>
-                    </xsl:for-each>
+                    <h3>@@dear@@</h3>
                 </td>
             </tr>
         </table>
