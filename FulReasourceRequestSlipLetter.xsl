@@ -2,6 +2,7 @@
 <!--
     Modified on 20161101 by Wee Hiong
     1. Rearrange the order of the elements in the slip. All styles are hardcoded inline.
+    2. Remove unused references to templates.
 
     Modified on 20150825 by Wee Hiong
     1. Fix incorrect request creation date.
@@ -26,10 +27,6 @@
     2. Hide the repeated requester name.
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:include href="header.xsl" />
-    <xsl:include href="senderReceiver.xsl" />
-    <xsl:include href="mailReason.xsl" />
-    <xsl:include href="footer.xsl" />
     <xsl:include href="style.xsl" />
     <xsl:include href="recordTitle.xsl" />
     <xsl:template match="/">
