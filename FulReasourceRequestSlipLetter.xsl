@@ -3,6 +3,7 @@
     Modified on 20161101 by Wee Hiong
     1. Rearrange the order of the elements in the slip. All styles are hardcoded inline.
     2. Remove unused references to templates.
+    3. Standardize case on labels.
 
     Modified on 20150825 by Wee Hiong
     1. Fix incorrect request creation date.
@@ -81,21 +82,21 @@
                                     <xsl:if test="notification_data/request/create_date != ''">
                                         <tr>
                                             <td>
-                                                <span style="font-size: small">Request Made: <xsl:value-of select="notification_data/request/create_date" /></span>
+                                                <span style="font-size: small">Request made: <xsl:value-of select="notification_data/request/create_date" /></span>
                                             </td>
                                         </tr>
                                     </xsl:if>
                                     <xsl:if test="notification_data/request/work_flow_entity/create_date != ''">
                                         <tr>
                                             <td>
-                                                <span style="font-size: small">Notification Sent: <xsl:value-of select="notification_data/request/work_flow_entity/create_date" /></span>
+                                                <span style="font-size: small">Notification sent: <xsl:value-of select="notification_data/request/work_flow_entity/create_date" /></span>
                                             </td>
                                         </tr>
                                     </xsl:if>
                                     <xsl:if test="notification_data/request/work_flow_entity/expiration_date != ''">
                                         <tr>
                                             <td>
-                                                <span style="font-size: large"><b>Expires On: <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date" /></b></span>
+                                                <span style="font-size: large"><b>Expires on: <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date" /></b></span>
                                             </td>
                                         </tr>
                                     </xsl:if>
