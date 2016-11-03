@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20161103 by Wee Hiong
+    1. Move expiry date up to a more prominent position.
+    2. Rename title from HOLD to HOLD SLIP.
+    3. Remove request barcode image.
+    4. Make the slip longer.
+
     Modified on 20161101 by Wee Hiong
     1. Rearrange the order of the elements in the slip. All styles are hardcoded inline.
     2. Remove unused references to templates.
@@ -52,28 +58,35 @@
                                 <xsl:when test="notification_data/request_type = 'Patron physical item request'">
                                     <tr>
                                         <td style="text-align: center">
-                                            <span style="font-size: xx-large"><b>[[ HOLD ]]</b></span>
+                                            <span style="font-size: xx-large"><b>HOLD SLIP</b></span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <span style="font-size: large; text-decoration: underline"><b><xsl:value-of select="notification_data/user_for_printing/name" /></b></span>
+                                            <span style="font-size: large"><b>For: <u><xsl:value-of select="notification_data/user_for_printing/name" /></u></b></span>
                                         </td>
                                     </tr>
+                                    <xsl:if test="notification_data/request/work_flow_entity/expiration_date != ''">
+                                        <tr>
+                                            <td>
+                                                <span style="font-size: large"><b>Expires on: <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date" /></b></span>
+                                            </td>
+                                        </tr>
+                                    </xsl:if>
                                     <xsl:if test="notification_data/request/selected_inventory_type='ITEM'">
                                         <tr>
                                             <td>
-                                                <span style="font-size: large"><b><xsl:value-of select="notification_data/phys_item_display/barcode" /></b></span>
+                                                <span style="font-size: large"><xsl:value-of select="notification_data/phys_item_display/barcode" /></span>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <span style="font-size: large"><b><xsl:call-template name="recordTitle" /></b></span>
+                                                <span style="font-size: large"><xsl:call-template name="recordTitle" /></span>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <span style="font-size: large"><b><xsl:value-of select="notification_data/phys_item_display/call_number" /></b></span>
+                                                <span style="font-size: large"><xsl:value-of select="notification_data/phys_item_display/call_number" /></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -96,18 +109,6 @@
                                             </td>
                                         </tr>
                                     </xsl:if>
-                                    <xsl:if test="notification_data/request/work_flow_entity/expiration_date != ''">
-                                        <tr>
-                                            <td>
-                                                <span style="font-size: large"><b>Expires on: <xsl:value-of select="notification_data/request/work_flow_entity/expiration_date" /></b></span>
-                                            </td>
-                                        </tr>
-                                    </xsl:if>
-                                    <tr>
-                                        <td style="text-align: center">
-                                            <img src="cid:request_id_barcode.png" alt="Request Barcode" />
-                                        </td>
-                                    </tr>
                                     <xsl:if test="notification_data/request/system_notes != ''">
                                         <tr>
                                             <td>
@@ -122,6 +123,10 @@
                                             </td>
                                         </tr>
                                     </xsl:if>
+                                    <!-- Some padding to make the hold slip longer. The printer ignores trailing whitespace. -->
+                                    <tr>
+                                        <td style="height: 200px; vertical-align: bottom; text-align: center">.</td>
+                                    </tr>
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <tr>
