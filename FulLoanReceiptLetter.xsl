@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20161031 by Wee Hiong
+    1. Inform user about returning reserve item to owning library.
+
     Modified on 20160811 by Wee Hiong
     1. Insert libchanges2016 message (about change to 3-hour loans).
 
@@ -87,6 +90,7 @@
                                                 </td>
                                                 <td>
                                                     <xsl:value-of select="library_name" />
+                                                    <xsl:if test="location_code='CR3H' or location_code='CRMedia' or location_code='LAWCR3H'">#</xsl:if>
                                                 </td>
                                             </tr>
                                         </xsl:for-each>
@@ -96,6 +100,11 @@
                             <xsl:if test="//item_loan/due_date_shortened_reason[text()]='RECALL'">
                                 <tr>
                                     <td>* Loan period is shortened due to reservation by another user.</td>
+                                </tr>
+                            </xsl:if>
+                            <xsl:if test="//item_loan/location_code[text()]='CR3H' or //item_loan/location_code[text()]='CRMedia' or //item_loan/location_code[text()]='LAWCR3H'">
+                                <tr>
+                                    <td># Reserve item must be returned directly to the owning library.</td>
                                 </tr>
                             </xsl:if>
                         </table>

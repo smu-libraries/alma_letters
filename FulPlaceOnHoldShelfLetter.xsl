@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20161031 by Wee Hiong
+    1. Differentiate between pick up locations.
+
     Modified on 20160707 by Wee Hiong
     1. Add do-not-reply message to the footer.
 
@@ -35,6 +38,14 @@
                                 <td>@@following_item_requested_on@@
                                     <xsl:value-of select="notification_data/request/create_date" />,
                                     @@can_picked_at@@
+                                    <xsl:choose>
+                                        <xsl:when test="notification_data/request/calculated_destination_name='Kwa Geok Choo Library - KGC Services Desk'">
+                                            Kwa Geok Choo Law Library Services Desk.
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            Li Ka Shing Library Services Desk.
+                                        </xsl:otherwise>
+                                    </xsl:choose>
                                 </td>
                             </tr>
                             <xsl:if test="notification_data/request/work_flow_entity/expiration_date">
