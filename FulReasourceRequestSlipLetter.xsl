@@ -110,6 +110,11 @@
                                             </td>
                                         </tr>
                                     </xsl:if>
+                                    <tr>
+                                        <td>
+                                            <span style="font-size: small">@@request_id@@: <xsl:value-of select="notification_data/request_id" /></span>
+                                        </td>
+                                    </tr>
                                     <xsl:if test="notification_data/request/system_notes != ''">
                                         <tr>
                                             <td>
