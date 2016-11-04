@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
     Modified on 20161104 by Wee Hiong
+    1. Add requester's user group to hold slip.
+
+    Modified on 20161104 by Wee Hiong
     1. Add customized slip for Move Temporarily and Move Permanently.
     2. Remove Requested For at the top.
 
@@ -61,7 +64,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <span style="font-size: large"><b>For: <u><xsl:value-of select="notification_data/user_for_printing/name" /></u></b></span>
+                                            <span style="font-size: large"><b>For: <u><xsl:value-of select="notification_data/user_for_printing/name" /></u> (<xsl:value-of select="notification_data/user_for_printing/user_group" />)</b></span>
                                         </td>
                                     </tr>
                                     <xsl:if test="notification_data/request/work_flow_entity/expiration_date != ''">
