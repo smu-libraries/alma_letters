@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+    Modified on 20161104 by Wee Hiong
+    1. Add customized slip for Move Temporarily and Move Permanently.
+    2. Remove Requested For at the top.
+
     Modified on 20161103 by Wee Hiong
     1. Move expiry date up to a more prominent position.
     2. Rename title from HOLD to HOLD SLIP.
@@ -45,12 +49,6 @@
                 <xsl:call-template name="generalStyle" />
             </head>
             <body>
-                <xsl:if test="notification_data/request_type != 'Patron physical item request'">
-                    <h2>
-                        <b>@@requested_for@@:
-                        <xsl:value-of select="notification_data/user_for_printing/name" /></b>
-                    </h2>
-                </xsl:if>
                 <div class="messageArea">
                     <div class="messageBody">
                         <table cellspacing="0" cellpadding="5" border="0">
@@ -124,6 +122,72 @@
                                         </tr>
                                     </xsl:if>
                                     <!-- Some padding to make the hold slip longer. The printer ignores trailing whitespace. -->
+                                    <tr>
+                                        <td style="height: 200px; vertical-align: bottom; text-align: center">.</td>
+                                    </tr>
+                                </xsl:when>
+                                <xsl:when test="notification_data/request_type = 'Move temporarily' or notification_data/request_type = 'Move permanently'">
+                                    <tr>
+                                        <td style="text-align: center">
+                                            <span style="font-size: xx-large"><b>XFER ITEM</b></span>
+                                        </td>
+                                    </tr>
+                                    <xsl:if test="notification_data/request/selected_inventory_type='ITEM'">
+                                        <tr>
+                                            <td>
+                                                <span style="font-size: large"><b><xsl:value-of select="notification_data/phys_item_display/barcode" /></b></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span style="font-size: large"><b><xsl:call-template name="recordTitle" /></b></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span style="font-size: large"><b><xsl:value-of select="notification_data/phys_item_display/call_number" /></b></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span style="font-size: large"><b><xsl:value-of select="notification_data/phys_item_display/location_name" /></b></span>
+                                            </td>
+                                        </tr>
+                                    </xsl:if>
+                                    <xsl:if test="notification_data/request/create_date != ''">
+                                        <tr>
+                                            <td>
+                                                <span style="font-size: small">Request made: <xsl:value-of select="notification_data/request/create_date" /></span>
+                                            </td>
+                                        </tr>
+                                    </xsl:if>
+                                    <xsl:if test="notification_data/request/work_flow_entity/create_date != ''">
+                                        <tr>
+                                            <td>
+                                                <span style="font-size: small">Notification sent: <xsl:value-of select="notification_data/request/work_flow_entity/create_date" /></span>
+                                            </td>
+                                        </tr>
+                                    </xsl:if>
+                                    <tr>
+                                        <td>
+                                            <span style="font-size: small">@@request_id@@: <xsl:value-of select="notification_data/request_id" /></span>
+                                        </td>
+                                    </tr>
+                                    <xsl:if test="notification_data/request/system_notes != ''">
+                                        <tr>
+                                            <td>
+                                                <span style="font-size: large"><b>@@system_notes@@: <xsl:value-of select="notification_data/request/system_notes" /></b></span>
+                                            </td>
+                                        </tr>
+                                    </xsl:if>
+                                    <xsl:if test="notification_data/request/note != ''">
+                                        <tr>
+                                            <td>
+                                                <span style="font-size: large"><b>@@request_note@@: <xsl:value-of select="notification_data/request/note" /></b></span>
+                                            </td>
+                                        </tr>
+                                    </xsl:if>
+                                    <!-- Some padding to make the move slip longer. The printer ignores trailing whitespace. -->
                                     <tr>
                                         <td style="height: 200px; vertical-align: bottom; text-align: center">.</td>
                                     </tr>
