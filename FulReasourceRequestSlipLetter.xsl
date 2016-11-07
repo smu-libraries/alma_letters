@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  Modified on 20161107 by Wee Hiong
+  1. Cater for both item and holding-level holds.
+  2. Change XFER ITEM to TRANSFER ITEM.
+
   Modified on 20161104 by Wee Hiong
   1. Add requester's user group to hold slip.
 
@@ -74,7 +78,7 @@
                       </td>
                     </tr>
                   </xsl:if>
-                  <xsl:if test="notification_data/request/selected_inventory_type='ITEM'">
+                  <xsl:if test="notification_data/request/selected_inventory_type='ITEM' or notification_data/request/selected_inventory_type='HOLDING'">
                     <tr>
                       <td>
                         <span style="font-size: large"><xsl:value-of select="notification_data/phys_item_display/barcode" /></span>
@@ -137,7 +141,7 @@
                 <xsl:when test="notification_data/request_type = 'Move temporarily' or notification_data/request_type = 'Move permanently'">
                   <tr>
                     <td style="text-align: center">
-                      <span style="font-size: xx-large"><b>XFER ITEM</b></span>
+                      <span style="font-size: xx-large"><b>TRANSFER ITEM</b></span>
                     </td>
                   </tr>
                   <xsl:if test="notification_data/request/selected_inventory_type='ITEM'">
