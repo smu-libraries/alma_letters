@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  Modified on 20161212 by Wee Hiong
+  1. Change all links to the library website from HTTP to HTTPS.
+
   Modified on 20151222 by Wee Hiong
   1. Add contact information into the header on the right side of the logo.
 -->
@@ -47,7 +50,7 @@
                 <td>Website:
                   <a>
                     <xsl:attribute name="href">
-                      http://library.smu.edu.sg
+                      https://library.smu.edu.sg
                     </xsl:attribute>
                     library.smu.edu.sg
                   </a>
@@ -57,7 +60,7 @@
                 <td>
                   <a>
                     <xsl:attribute name="href">
-                      http://library.smu.edu.sg/library/opening-hours
+                      https://library.smu.edu.sg/library/opening-hours
                     </xsl:attribute>
                     Opening hours
                   </a>
