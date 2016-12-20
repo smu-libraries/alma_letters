@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  Modified on 20161220 by Wee Hiong
+  1. Remove libchanges2016 message.
+
   Modified on 20161219 by Wee Hiong
   1. Update course reserve location codes.
   2. Repurpose the variable @@dear@@ for the reserve item message.
@@ -114,7 +117,6 @@
             </table>
             <br />
             <!-- footer.xsl -->
-            <xsl:call-template name="libchanges2016" />
             <xsl:call-template name="myAccount" />
             <xsl:call-template name="doNotReply" />
           </div>

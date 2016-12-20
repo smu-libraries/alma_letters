@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  Modified on 20161220 by Wee Hiong
+  1. Remove template for libchanges2016 message.
+
   Modified on 20160811 by Wee Hiong
   1. Add template for libchanges2016 message (about change to 3-hour loans).
 
@@ -69,19 +72,6 @@
       <tr>
         <td>
           ** This is a system generated email. Please do not reply to this message. **
-        </td>
-      </tr>
-    </table>
-  </xsl:template>
-  <xsl:template name="libchanges2016">
-    <table align="left">
-      <tr>
-        <td align="left">
-          Starting Term 1 2016, the loan period for Reserves will be extended from 2 to 3 hours. Read details for this and other enhancements at
-          <a>
-            <xsl:attribute name="href">http://smu.sg/libchanges2016</xsl:attribute>
-            http://smu.sg/libchanges2016
-          </a>.
         </td>
       </tr>
     </table>
