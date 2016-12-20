@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  Modified on 20161219 by Wee Hiong
+  1. Update course reserve location codes.
+  2. Repurpose the variable @@dear@@ for the reserve item message.
+
   Modified on 20161031 by Wee Hiong
   1. Inform user about returning reserve item to owning library.
 
@@ -83,14 +87,14 @@
                         </td>
                         <td>
                           <xsl:value-of select="loan_date" />
-                          <xsl:if test="due_date_shortened_reason='RECALL'">*</xsl:if>
+                          <xsl:if test="due_date_shortened_reason='RECALL'"><b>*</b></xsl:if>
                         </td>
                         <td>
                           <xsl:value-of select="new_due_date_str" />
                         </td>
                         <td>
                           <xsl:value-of select="library_name" />
-                          <xsl:if test="location_code='CR3H' or location_code='CRMedia' or location_code='LAWCR3H'">#</xsl:if>
+                          <xsl:if test="location_code='CR3H' or location_code='CRMedia' or location_code='3DaysL4' or location_code='3 Days L3' or location_code='3 Days L4'"><b>#</b></xsl:if>
                         </td>
                       </tr>
                     </xsl:for-each>
@@ -99,12 +103,12 @@
               </tr>
               <xsl:if test="//item_loan/due_date_shortened_reason[text()]='RECALL'">
                 <tr>
-                  <td>* Loan period is shortened due to reservation by another user.</td>
+                  <td><b>* Loan period is shortened due to reservation by another user.</b></td>
                 </tr>
               </xsl:if>
-              <xsl:if test="//item_loan/location_code[text()]='CR3H' or //item_loan/location_code[text()]='CRMedia' or //item_loan/location_code[text()]='LAWCR3H'">
+              <xsl:if test="//item_loan/location_code[text()]='CR3H' or //item_loan/location_code[text()]='CRMedia' or //item_loan/location_code[text()]='3DaysL4' or //item_loan/location_code[text()]='3 Days L3' or //item_loan/location_code[text()]='3 Days L4'">
                 <tr>
-                  <td># Reserve item must be returned directly to the owning library.</td>
+                  <td><b># @@dear@@</b></td>
                 </tr>
               </xsl:if>
             </table>
