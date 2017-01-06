@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  Modified on 20170106 by Wee Hiong
+  1. Fix incorrect circulation desk in calculated_destination_name.
+
   Modified on 20161031 by Wee Hiong
   1. Differentiate between pick up locations.
 
@@ -39,7 +42,7 @@
                   <xsl:value-of select="notification_data/request/create_date" />,
                   @@can_picked_at@@
                   <xsl:choose>
-                    <xsl:when test="notification_data/request/calculated_destination_name='Kwa Geok Choo Library - KGC Services Desk'">
+                    <xsl:when test="notification_data/request/calculated_destination_name='Kwa Geok Choo Law Library - Service Desk'">
                       Kwa Geok Choo Law Library Services Desk.
                     </xsl:when>
                     <xsl:otherwise>
