@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  Modified on 20170109 by Wee Hiong
+  1. Print library name in hold slips.
+
   Modified on 20161107 by Wee Hiong
   1. Cater for both item and holding-level holds.
   2. Change XFER ITEM to TRANSFER ITEM.
@@ -100,6 +103,11 @@
                       </td>
                     </tr>
                   </xsl:if>
+                  <tr>
+                    <td>
+                      <span style="font-size: small">Library: <xsl:value-of select="notification_data/request/delivery_address" /></span>
+                    </td>
+                  </tr>
                   <xsl:if test="notification_data/request/create_date != ''">
                     <tr>
                       <td>
