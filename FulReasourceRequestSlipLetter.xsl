@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  Modified on 20170111 by Wee Hiong
+  1. Print circulation desk name in transfer item slips.
+
   Modified on 20170109 by Wee Hiong
   1. Print library name in hold slips.
 
@@ -174,6 +177,11 @@
                       </td>
                     </tr>
                   </xsl:if>
+                  <tr>
+                    <td>
+                      <span style="font-size: small">Desk: <xsl:value-of select="notification_data/request/assigned_unit_name" /></span>
+                    </td>
+                  </tr>
                   <xsl:if test="notification_data/request/create_date != ''">
                     <tr>
                       <td>
