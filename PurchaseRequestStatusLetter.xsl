@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Modified on 20170823 by Wee Hiong
-  1. Initial import.
--->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:include href="header.xsl" />
   <xsl:include href="mailReason.xsl" />
@@ -36,13 +32,13 @@
                       @@rejected@@
                       <xsl:choose>
                         <xsl:when test="notification_data/purchase_request/reject_reason_desc='Cost'">
-                          cost lah.
+                          the cost of the book.
                         </xsl:when>
                         <xsl:when test="notification_data/purchase_request/reject_reason_desc='Irrelevant'">
-                          irrelevance lah.
+                          the lack of subject relevance to our collection.
                         </xsl:when>
                         <xsl:when test="notification_data/purchase_request/reject_reason_desc='Duplicate'">
-                          duplicated order lah.
+                          a duplicated order for the same book.
                         </xsl:when>
                         <xsl:otherwise>
                           unforseen circumstances.
