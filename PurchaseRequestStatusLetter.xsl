@@ -32,16 +32,19 @@
                       @@rejected@@
                       <xsl:choose>
                         <xsl:when test="notification_data/purchase_request/reject_reason_desc='Cost'">
-                          the cost of the book.
+                          due to the cost of the book.
                         </xsl:when>
                         <xsl:when test="notification_data/purchase_request/reject_reason_desc='Irrelevant'">
-                          the lack of subject relevance to our collection.
+                          due to the lack of subject relevance to our collection.
                         </xsl:when>
                         <xsl:when test="notification_data/purchase_request/reject_reason_desc='Duplicate'">
-                          a duplicated order for the same book.
+                          due to a duplicated order for the same book.
+                        </xsl:when>
+                        <xsl:when test="notification_data/purchase_request/reject_reason_desc='NotDDA'">
+                          because it is not available for order-on-demand.
                         </xsl:when>
                         <xsl:otherwise>
-                          unforseen circumstances.
+                          due to unforseen circumstances.
                         </xsl:otherwise>
                       </xsl:choose>
                       We apologize for the inconvenience caused. Please contact <a href="mailto:libacq@smu.edu.sg">our staff</a> if you require further assistance.
